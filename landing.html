@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Tech  - Services LLC pour Madagascar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        header {
+            background-color: #ffffff;
+            color: #343a40;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header a {
+            text-decoration: none;
+            color: #343a40;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        .services {
+            padding: 80px 20px;
+            background-color: #ffffff;
+        }
+        .services h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-item {
+            text-align: center;
+        }
+        .service-item i {
+            font-size: 3em;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .service-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .about {
+            background-color: #f8f9fa;
+            padding: 80px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+        .about img {
+            max-width: 400px;
+            border-radius: 8px;
+        }
+        .about-content {
+            max-width: 600px;
+        }
+        .about-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .contact {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .contact p {
+            margin-bottom: 40px;
+        }
+        .testimonials {
+            padding: 80px 20px;
+            background-color: #f8f9fa;
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .testimonial-item {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .testimonial-item p {
+            font-style: italic;
+        }
+        .testimonial-item h4 {
+            text-align: right;
+            margin-top: 20px;
+            color: #007bff;
+        }
+        .faq {
+            padding: 80px 20px;
+            background-color: #ffffff;
+        }
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+        }
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .faq-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .pricing {
+            padding: 80px 20px;
+            background-color: #ffffff;
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+        }
+
+        .pricing-card {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 40px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .pricing-card h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card .price {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .pricing-card ul li {
+            margin-bottom: 10px;
+        }
+
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .whatsapp-widget a {
+            display: block;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-size: 2em;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #343a40;
+            color: white;
+        }
+        #cookie-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            display: none;
+            z-index: 1000;
+        }
+        #cookie-bar a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        #cookie-bar button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">T-Tech</div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#about">À Propos</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Créez votre LLC aux États-Unis et Recevez des Paiements Internationaux</h1>
+        <p>La solution pour les entrepreneurs malgaches</p>
+        <a href="https://wa.me/6281325249697" class="cta-button">Commencez Aujourd'hui</a>
+    </section>
+    <section id="services" class="services">
+        <h2>Nos Services</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <i class="fas fa-university"></i>
+                <h3>Comptes Bancaires Professionnels</h3>
+                <p>Ouvrez des comptes bancaires professionnels avec Wise et Mercury pour recevoir des paiements internationaux sans tracas.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-credit-card"></i>
+                <h3>Paiements par Carte</h3>
+                <p>Acceptez les paiements par carte de vos clients du monde entier grâce à l'intégration de Stripe.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-building"></i>
+                <h3>Création de LLC</h3>
+                <p>Nous nous occupons de toutes les formalités administratives pour la création de votre LLC aux États-Unis, vous permettant de vous concentrer sur votre entreprise.</p>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="À Propos de T-Tech">
+        <div class="about-content">
+            <h2>À Propos de T-Tech</h2>
+            <p>T-Tech se consacre à aider les entrepreneurs malgaches à surmonter les difficultés liées au démarrage et à la gestion d'une entreprise aux États-Unis. Notre équipe d'experts s'engage à vous fournir le meilleur service et le meilleur soutien pour assurer votre succès.</p>
+        </div>
+    </section>
+    <section id="testimonials" class="testimonials">
+        <h2>Ce que disent nos clients</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-item">
+                <p>"T-Tech a rendu la création de ma LLC incroyablement facile. Le processus a été rapide et leur équipe était toujours là pour répondre à mes questions. Je les recommande vivement !"</p>
+                <h4>- Riana, Fondatrice d'une Startup Tech</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"En tant qu'entrepreneur étranger, je n'étais pas sûr du processus de création d'une entreprise américaine. T-Tech m'a guidé à chaque étape et a rendu l'expérience transparente."</p>
+                <h4>- Andry, Entrepreneur International</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"Le service d'agent enregistré de T-Tech est de premier ordre. Ils sont fiables et efficaces, et je n'ai jamais à m'inquiéter de manquer des documents juridiques importants."</p>
+                <h4>- Fara, Propriétaire de Petite Entreprise</h4>
+            </div>
+        </div>
+    </section>
+    <section id="pricing" class="pricing">
+        <h2>Nos Tarifs</h2>
+        <div class="pricing-card">
+            <h3>Pack Complet LLC</h3>
+            <div class="price">1 200 000 MGA</div>
+            <ul>
+                <li><strong>Délai de traitement :</strong></li>
+                <li>- 5 heures pour l'incorporation au Missouri</li>
+                <li>- 21 jours pour l'EIN fédéral</li>
+                <li><strong>Documents requis :</strong> CIN ou passeport</li>
+            </ul>
+            <a href="https://wa.me/6281325249697" class="cta-button">Contactez-nous sur WhatsApp</a>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <h2>Questions Fréquemment Posées</h2>
+        <div class="faq-item">
+            <h3>Qu'est-ce qu'une LLC ?</h3>
+            <p>Une Limited Liability Company (LLC) est une structure d'entreprise qui combine la taxation de type partenariat ou entreprise individuelle avec la responsabilité limitée d'une société.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Pourquoi ai-je besoin d'un agent enregistré ?</h3>
+            <p>Un agent enregistré est une personne ou une entité désignée pour recevoir la correspondance juridique et officielle de l'État au nom de votre entreprise. C'est une exigence légale dans chaque État.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Puis-je créer une LLC dans un État où je ne vis pas ?</h3>
+            <p>Oui, vous pouvez créer une LLC dans n'importe quel État, quel que soit votre lieu de résidence. Cependant, vous aurez besoin d'un agent enregistré dans l'État de formation.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contactez-nous</h2>
+        <p>Prêt à commencer votre aventure entrepreneuriale aux États-Unis ? Contactez-nous dès aujourd'hui !</p>
+        <a href="https://wa.me/6281325249697" class="cta-button">Contactez-nous sur WhatsApp</a>
+    </section>
+
+    <div class="whatsapp-widget">
+        <a href="https://wa.me/6281325249697" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <footer>
+        &copy; 2025 T-Tech . Tous droits réservés.
+    </footer>
+    <div id="cookie-bar">
+        <p>Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez nos <a href="/terms">Conditions d'Utilisation</a>, notre <a href="/privacy">Politique de Confidentialité</a> et notre <a href="/cookies">Politique en matière de Cookies</a>.</p>
+        <button onclick="acceptCookies()">Accepter</button>
+    </div>
+    <script>
+        function acceptCookies() {
+            document.getElementById('cookie-bar').style.display = 'none';
+            // Ajoutez ici la logique pour définir le consentement aux cookies si nécessaire
+        }
+        // Afficher la barre de cookies au chargement
+        window.onload = function() {
+            document.getElementById('cookie-bar').style.display = 'block';
+        };
+    </script>
+</body>
+</html>
