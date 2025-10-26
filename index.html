@@ -173,6 +173,7 @@
             bottom: 20px;
             right: 20px;
             z-index: 1000;
+            display: none;
         }
 
         .whatsapp-widget a {
@@ -322,6 +323,16 @@
         window.onload = function() {
             document.getElementById('cookie-bar').style.display = 'block';
         };
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.querySelector('.whatsapp-widget').style.display = "block";
+            } else {
+                document.querySelector('.whatsapp-widget').style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
